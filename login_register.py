@@ -39,3 +39,21 @@ root.mainloop()
 
 #CSV 
 
+import csv 
+
+with open('login_register for python practice_01152022.csv') as f:
+	reader=csv.reader(f)
+	content = [row for row in reader]
+
+print(content)
+
+
+
+
+
+
+
+
+
+
+
