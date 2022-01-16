@@ -1,7 +1,8 @@
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#CSV 
+#login function
 
 import csv 
 
@@ -19,44 +20,70 @@ def buttonTestPushed():
 			lblDisplayAge['text']=infoList[x][4]
 			lblDisplayHeight['text']=infoList[x][5]
 
-import tkinter as tk
-
-#login function
-
 #login UI
+
+#window_login_register
+
+import tkinter as tk
+import tkinter.ttk as ttk
+
+def buttonLoginPushed():
+    frame_logined.tkraise()
+
+def buttonLogoutPushed():
+    frame_login.tkraise()
 
 root=tk.Tk()
 root.geometry('800x800')
 root.title('Login_register')
+root.grid_rowconfigure(0, weight=1)
+root.grid_columnconfigure(0, weight=1)
 
-buttonLogin=tk.Button(root,text='login')
+#frame_login
+
+frame_login = ttk.Frame(root)
+frame_login.grid(row=0, column=0, sticky="nsew", pady=20)
+
+#widget_login
+
+buttonLogin=tk.Button(frame_login,text='login',command=buttonLoginPushed)
 buttonLogin.place(x=250,y=350)
 
-buttonDisplayTest=tk.Button(root,text='test',command=buttonTestPushed)
-buttonDisplayTest.place(x=250,y=450)
-
-lblEntryUserID=tk.Label(root,text='userID')
+lblEntryUserID=tk.Label(frame_login,text='userID')
 lblEntryUserID.place(x=100,y=150)
 
-txtboxEntryUserID=tk.Entry(root,width=25)
+txtboxEntryUserID=tk.Entry(frame_login,width=25)
 txtboxEntryUserID.place(x=200,y=150)
 
-lblEntryPass=tk.Label(root,text='password')
+lblEntryPass=tk.Label(frame_login,text='password')
 lblEntryPass.place(x=100,y=250)
 
-txtboxEntryPass=tk.Entry(root,width=25)
+txtboxEntryPass=tk.Entry(frame_login,width=25)
 txtboxEntryPass.place(x=200,y=250)
 
-#labelDisplayInfo
+#frame_logined
 
-lblDisplayName=tk.Label(root,text='name')
-lblDisplayName.place(x=100, y=400)
+frame_logined = ttk.Frame(root)
+frame_logined.grid(row=0, column=0, sticky="nsew", pady=20)
 
-lblDisplayAge=tk.Label(root,text='age')
-lblDisplayAge.place(x=100, y=450)
+#widget_logined
 
-lblDisplayHeight=tk.Label(root,text='height')
-lblDisplayHeight.place(x=100, y=500)
+buttonDisplayTest=tk.Button(frame_logined,text='test',command=buttonTestPushed)
+buttonDisplayTest.place(x=100,y=100)
+
+buttonLogin=tk.Button(frame_logined,text='log out',command=buttonLogoutPushed)
+buttonLogin.place(x=250,y=350)
+
+lblDisplayName=tk.Label(frame_logined,text='name')
+lblDisplayName.place(x=200, y=200)
+
+lblDisplayAge=tk.Label(frame_logined,text='age')
+lblDisplayAge.place(x=200, y=250)
+
+lblDisplayHeight=tk.Label(frame_logined,text='height')
+lblDisplayHeight.place(x=200, y=300)
+
+frame_login.tkraise()
 
 #labelDisplayError
 
