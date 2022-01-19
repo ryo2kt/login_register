@@ -2,13 +2,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#login function
 
 import csv 
-
-#login UI
-#window_login_register
-
 import tkinter as tk
 import tkinter.ttk as ttk
 
@@ -92,6 +87,7 @@ root.geometry('800x800')
 root.title('Login_register')
 root.grid_rowconfigure(0, weight=1)
 root.grid_columnconfigure(0, weight=1)
+
 
 #frame_login
 
